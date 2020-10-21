@@ -1,0 +1,17 @@
+apiVersion: kpack.io/v1alpha1
+kind: Image
+metadata:
+  name: go-app
+spec:
+  builder:
+    kind: ClusterBuilder
+    name: default
+  cacheSize: 2G
+  failedBuildHistoryLimit: 10
+  imageTaggingStrategy: BuildNumber
+  source:
+    git:
+      revision: 1251f3746a4d01f60059313e4aba95961cfe8b4d
+      url: https://github.com/jasonmorgan/go-hello-world
+  successBuildHistoryLimit: 10
+  tag: harbor.59s.io/59s/go-app
